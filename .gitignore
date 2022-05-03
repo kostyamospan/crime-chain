@@ -1,4 +1,5 @@
 geth/
-keystore/
+keystore/*
+!keystore/.gitkeep
 password.txt
 *.swp
