@@ -1,9 +1,13 @@
 #! /bin/bash
-cp ../staic-nodes.json ./geth/
+
+mkdir -p "./geth" && cp ../static-nodes.json ./geth/
 
 echo "Static nodes file is copied to ./geth";
 
-geth 	--datadir ./ \
+CHAIN_ID=../get-chain-id.sh
+
+geth 	--networkid $CHAIN_ID \
+		--datadir ./ \
 		--syncmode 'full' \  
 		--port 30312 \
 		--http \

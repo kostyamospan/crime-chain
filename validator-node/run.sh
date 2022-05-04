@@ -1,8 +1,15 @@
 #! /bin/bash
-geth    --networkid 6969 \
+
+mkdir -p "./geth" && cp ../static-nodes.json ./geth/
+
+echo "Static nodes file is copied to ./geth";
+
+VALIDATOR_ADDRESS=echo "./validator"
+CHAIN_ID=../get-chain-id.sh
+
+geth    --networkid $CHAIN_ID \
        	--datadir ./ \
-       	--unlock 0x1c3949cee9e402b02892002afd87c533eec416d6 \
+       	--unlock ./validator \
        	--mine \
-#       --nodekey nodekeyfile \
-	--password ./password.txt \ 
-	--port 3031
+		--password ./password \ 
+		--port 3031
