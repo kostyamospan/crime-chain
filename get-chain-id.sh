@@ -1,3 +1,3 @@
 #! /bin/bash
 
-cat ./genesis.json | jq '.config.chainId'
+cat $1 | jq '.config.chainId'

@@ -4,7 +4,7 @@ mkdir -p "./geth" && cp ../static-nodes.json ./geth/
 
 echo "Static nodes file is copied to ./geth";
 
-CHAIN_ID=$(../get-chain-id.sh)
+CHAIN_ID=$(../get-chain-id.sh ../genesis.json)
 
 geth 	--networkid "$CHAIN_ID" \
 		--datadir ./ \
