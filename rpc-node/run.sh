@@ -6,7 +6,7 @@ echo "Static nodes file is copied to ./geth";
 
 CHAIN_ID=$(../get-chain-id.sh)
 
-geth 	--networkid $CHAIN_ID \
+geth 	--networkid "$CHAIN_ID" \
 		--datadir ./ \
 		--syncmode 'full' \  
 		--port 30312 \
