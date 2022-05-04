@@ -12,4 +12,4 @@ geth    --networkid $CHAIN_ID \
        	--unlock ./validator \
        	--mine \
 		--password ./password \ 
-		--port 3031
+		--port 30311 
