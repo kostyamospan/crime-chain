@@ -1,11 +1,19 @@
-geth/*
-!geth/.gitkeep
+!*/
+*/*
+!*/geth/
+*/geth/*
+!*/geth/.gitkeep
 
-keystore/*
-!keystore/.gitkeep
+!*/
+*/*
+!*/keystore/
+*/keystore/*
+!*/keystore/.gitkeep
 
 password.txt
+
 *.swp
+
 bootnode.key
 
 validator-node/validator
