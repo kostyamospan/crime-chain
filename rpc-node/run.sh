@@ -8,9 +8,10 @@ CHAIN_ID=$(../get-chain-id.sh ../genesis.json)
 
 geth 	--networkid "$CHAIN_ID" \
 		--datadir ./ \
-		--syncmode 'full' \  
+		--syncmode 'full' \
 		--port 30312 \
+		--nodekey ./bootnode.key \
 		--http \
-		--http.port 80 \ 
-		--http.addr 0.0.0.0 \ 
-		--http.api personal,db,eth,net,web3,txpool,miner
+		--http.port 8545 \
+		--http.api personal,eth,net,web3,txpool \
+		--http.addr 0.0.0.0
