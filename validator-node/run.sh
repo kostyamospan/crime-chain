@@ -8,11 +8,10 @@ VALIDATOR_ADDRESS=$(cat ./validator)
 PASSWORD=$(cat ./password)
 CHAIN_ID=$(../get-chain-id.sh ../genesis.json)
 
-echo "VALIDATOR IS $VALIDATOR_ADDRESS"
-
 geth    --networkid $CHAIN_ID \
        	--datadir ./ \
        	--unlock $VALIDATOR_ADDRESS \
-       	--mine \
-		--password $PASSWORD \ 
-		--port 30311 
+	--password ./password \
+	--port 30311 \
+	--identity "validator1" \
+	--mine
